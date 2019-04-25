@@ -32,7 +32,39 @@ Print the answer as part of a message:
 "The numbers called by people in Bangalore have codes:"
  <list of codes>
 The list of codes should be print out one per line in lexicographic order with no duplicates.
+"""
+def findPre(num):
+    if num[0] == '(':
+        return num[1:4]
+    if ' ' in num:
+        return num[0:4]
+    if num[0:3] == '140':
+        return '140'
+    return None
 
+def updatePre(prefixes, num1, num2):
+    prefix1 = findPre(num1)
+    prefix2 = findPre(num2)
+
+    if prefix1 == '080' and prefix2 not in prefixes:
+        prefixes.append(prefix2)
+
+def lexSort(list):
+    list.sort()
+    return list
+
+prefixes = []
+for num1, num2, _, _ in calls:
+    updatePre(prefixes, num1, num2)
+
+sorted = lexSort(prefixes)
+print("The numbers called by people in Bangalore have codes:")
+if sorted:
+    for num in sorted:
+        print(num)
+
+
+"""
 Part B: What percentage of calls from fixed lines in Bangalore are made
 to fixed lines also in Bangalore? In other words, of all the calls made
 from a number starting with "(080)", what percentage of these calls
@@ -43,3 +75,16 @@ Print the answer as a part of a message::
 to other fixed lines in Bangalore."
 The percentage should have 2 decimal digits
 """
+
+calls_total = 0
+calls_080 = 0
+
+for num1, num2, _, _ in calls:
+    prefix1 = findPre(num1)
+    prefix2 = findPre(num2)
+    if prefix1 == '080':
+        calls_total += 1
+        if prefix2 == '080':
+            calls_080 += 1
+result = float(calls_080) / calls_total
+print("%.2f percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore." %result)
