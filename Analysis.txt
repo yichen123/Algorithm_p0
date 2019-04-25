@@ -1,0 +1,25 @@
+# Analysis
+In this report, we are going to analysis the relation between running time and the length of two input lists, say n for length of call list, and m for the length of text list. We will consider running time of the worst case and average scenarios.
+
+## Task0
+For this program, the running time does not relate to length of two lists.
+
+Therefore the running time will be O(1)
+
+## Task1
+For this program, it will loop through two lists once.
+
+Therefore the running time will be O(n+m)
+
+## Task2
+For this program, it will loop through the call list, and update the call time to the corresponding numbers. After this loop, the program will find the number with longest time.
+
+For the first part, the running time will be O(n).
+
+For the second part, we are using a dict to record the numbers and its call time length. The program will loop through the list of dict keys. The length of list of dict keys cannot larger than 2n, that is the worst case where all numbers in call list are distinct. the running time will be O(n).
+
+The overall running will be O(n).
+
+## Task3
+For this program, there are two tasks to be done.
+For the first task, it loop through the call list, 
