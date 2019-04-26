@@ -39,4 +39,4 @@ for entry in texts:
         met.append(num2)
         count += 1
 
-print("There are " + str(count) + " different telephone numbers in the records")
+print("There are {0} different telephone numbers in the records.").format(count)

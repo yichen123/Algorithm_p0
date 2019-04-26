@@ -77,8 +77,9 @@ for num1, num2, _, _ in calls:
         if prefix2 == '080':
             calls_080 += 1
 
+if not calls_total == 0:
+    result = float(calls_080) / calls_total * 100
 
-result = float(calls_080) / calls_total
 
 sorted = lexSort(prefixes)
 
@@ -86,5 +87,7 @@ print("The numbers called by people in Bangalore have codes:")
 if sorted:
     for num in sorted:
         print(num)
+    print("{0:.2f} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.").format(result)
 
-print("%.2f percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore." %result)
+else:
+    print(None)

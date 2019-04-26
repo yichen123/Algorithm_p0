@@ -62,3 +62,5 @@ print("These numbers could be telemarketers: ")
 if sorted:
     for num in sorted:
         print(num)
+else:
+    print(None)
