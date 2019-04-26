@@ -1,13 +1,13 @@
 # Analysis
-In this report, we are going to analysis the relation between running time and the length of two input lists, say n for length of call list, and m for the length of text list. We will consider running time of the worst case and average scenarios.
+In this report, we are going to analysis the relation between running time of the tasks and the length of two input lists, say n for length of call list, and m for the length of text list. We will consider running time of the worst case and average scenarios.
 
 ## Task0
 For this program, the running time does not relate to length of two lists.
 
-Therefore the running time will be O(1)
+Therefore the running time will be O(1).
 
 ## Task1
-For this program, it will loop through two lists once.
+For this program, it will loop through two lists.
 
 Therefore the running time will be O(n+m)
 
@@ -16,10 +16,26 @@ For this program, it will loop through the call list, and update the call time t
 
 For the first part, the running time will be O(n).
 
-For the second part, we are using a dict to record the numbers and its call time length. The program will loop through the list of dict keys. The length of list of dict keys cannot larger than 2n, that is the worst case where all numbers in call list are distinct. the running time will be O(n).
+For the second part, we are using a dict to record the numbers and its call time length. The program will loop through the list of dict keys for find the maximum. The length of list of dict keys cannot larger than 2n, that is the worst case where all numbers in call list are distinct. the running time will be O(n).
 
 The overall running will be O(n).
 
 ## Task3
-For this program, there are two tasks to be done.
-For the first task, it loop through the call list, 
+For this program, there are two part to be done.
+For the first part, it loop through the call list, extract the area code from the telephone numbers and record the it if call is from 080. The second part is sort the records and calculate the precentage, and then print them out as the result.
+
+For the first part, the program is a loop through the call list, the rest can be done in linear time. Therefore, the running time will be O(n).
+
+For the second part, the dominating part is sorting part, and running time will depend on the length of the record list, say k. We are using the quick sorting for it, so the running time will be O(k*log(k)) or O(k^2) for the worstcase. Normally, k will be much less then n, but for the worst case, say every calling number is from 080, and all the receiving numbers have distinct area code. Then k will be equal to n.
+
+Therefore, the average running time will be O(n) + O(k * log(k)), and for the worst case, it will be O(n^2).
+
+
+## Task4
+For this program, there are two task to perform.
+
+For the first part, it loops through the call list, and text list, and record all unique tele numbers into call_in, call_out, text_out, text_in lists. the running time for this part will be O(n + m)
+
+For the second part, it loop through the call_out list, and find the numbers that does not appear in other lists. Then it sort the result list and print it out. Let's say the length of call_out list is i, and length of the result list is j. As we are using quick sort for sorting part. the running time will be O(i) + O(j*log(j)), and O(i) + O(j^2) for the worst case.
+
+As task 3, normally i and j will be much smaller than m, n, and the running time will be O(m + n) + O(i) + O(j*log(j)). But for the worst case, all the numbers in the call_out are distinct and fits the description of the telemarketers, that is i == n, and j == n. So the running time will be O(n^2).
