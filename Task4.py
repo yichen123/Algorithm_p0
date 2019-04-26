@@ -28,9 +28,14 @@ The list of numbers should be print out one per line in lexicographic order with
 
 
 def lexSort(list):
-    if list:
-        list.sort()
-    return list
+    # quick sort
+    if len(list) <= 1:
+        return list
+    p = list[0]
+    less = [i for i in list[1:] if i < p]
+    great = [i for i in list[1:] if i > p]
+    return lexSort(less) + [p] + lexSort(great)
+
 
 telemarketers = []
 nums = {'call_out':[], 'call_in':[], 'text_out':[], 'text_in':[]}
