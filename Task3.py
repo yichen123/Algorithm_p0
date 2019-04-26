@@ -87,7 +87,7 @@ print("The numbers called by people in Bangalore have codes:")
 if sorted:
     for num in sorted:
         print(num)
-    print("{0:.2f} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.").format(result)
+    print("{0:.2f} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.".format(result))
 
 else:
     print(None)

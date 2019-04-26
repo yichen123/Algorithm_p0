@@ -20,6 +20,6 @@ Print messages:
 "Last record of calls, <incoming number> calls <answering number> at time <time>, lasting <during> seconds"
 """
 
-print('First record of texts, {0} texts {1} at time {2}').format(*texts[0])
+print('First record of texts, {0} texts {1} at time {2}'.format(*texts[0]))
 
-print('Last record of calls, {0} calls {1}at time {2}, lasting {3} seconds').format(*calls[-1])
+print('Last record of calls, {0} calls {1}at time {2}, lasting {3} seconds'.format(*calls[-1]))

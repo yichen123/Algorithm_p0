@@ -40,4 +40,4 @@ for num in time.keys():
         longest_num = num
 
 if longest_num:
-    print('{0} spent the longest time, {1} seconds, on the phone during September 2016.').format(longest_num, longest)
+    print('{0} spent the longest time, {1} seconds, on the phone during September 2016.'.format(longest_num, longest))
